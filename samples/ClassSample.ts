@@ -6,6 +6,7 @@ import {
   Field,
   Metadata,
 } from '../';
+import { RPCMeta } from '../types/RPCMeta';
 
 @Message()
 class ServiceMethodResponse {
@@ -26,7 +27,7 @@ export class MethodInput {
 export class ServiceName {
   @RPC(type => ServiceMethodResponse, {})
   async methodName(
-            @Metadata() metadata: any,
+            @Metadata() metadata: RPCMeta,
             @Input(type => MethodInput, { nullable: true }) input: MethodInput,
   ): Promise<ServiceMethodResponse> {
     return {
