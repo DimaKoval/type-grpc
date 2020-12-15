@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ",./",
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "target": "es6",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "./build",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+}

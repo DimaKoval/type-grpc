@@ -1,0 +1,27 @@
+{
+  "name": "type-grpc",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "typescript-json-schema": "^0.42.0"
+  },
+  "description": "TypeScript gRPC proto generator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaKoval/type-grpc.git"
+  },
+  "keywords": [
+    "typescript",
+    "grpc",
+    "generator"
+  ],
+  "author": "Dima Koval <iamdimakoval@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DimaKoval/type-grpc/issues"
+  },
+  "homepage": "https://github.com/DimaKoval/type-grpc#readme"
+}
