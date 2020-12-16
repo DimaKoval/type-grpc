@@ -1,10 +1,13 @@
 {
   "name": "type-grpc",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --config jestconfig.json"
+    "test": "jest --config jestconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test"
   },
   "dependencies": {
     "typescript-json-schema": "^0.42.0"
@@ -15,7 +18,7 @@
     "ts-jest": "^26.4.4",
     "typescript": "^3.9.7"
   },
-  "description": "TypeScript gRPC proto generator",
+  "description": "TypeScript GRPC proto generator",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DimaKoval/type-grpc.git"
