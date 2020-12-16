@@ -1,6 +1,16 @@
 # type-grpc
 type-grpc is typescript library to generate grpc service definitions 
 
+## installation
+
+```
+npm install type-grpc
+```
+OR
+```
+yarn add type-grpc
+```
+
 # example
 ```typescript
 import {
