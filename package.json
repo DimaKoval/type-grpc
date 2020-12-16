@@ -1,9 +1,9 @@
 {
   "name": "type-grpc",
   "version": "1.0.0",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc"
   },
   "dependencies": {
     "typescript-json-schema": "^0.42.0"

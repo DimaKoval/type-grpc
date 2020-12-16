@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "lib": [
       "es5",
       "es6",
@@ -11,13 +12,14 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "./build",
+    "outDir": "./lib",
     "skipLibCheck": true,
+    "declaration": true,
     "strict": true,
-    "strictPropertyInitialization": false,
+    "strictPropertyInitialization": false
   },
   "exclude": [
     "node_modules",
-    "build"
+    "lib"
   ]
 }
