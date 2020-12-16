@@ -17,9 +17,5 @@
     "declaration": true,
     "strict": true,
     "strictPropertyInitialization": false
-  },
-  "exclude": [
-    "node_modules",
-    "lib"
-  ]
+  }
 }
