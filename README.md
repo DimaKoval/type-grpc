@@ -12,7 +12,7 @@ yarn add type-grpc
 ```
 
 # Usage
-#### service type definitions for 
+#### typescript service definitions 
 ```typescript
 import {
   Service,
@@ -63,26 +63,22 @@ import { ServiceName } from './ServiceName';
 (async () => {
   const path = `${__dirname}/service.proto`;
   const packageName = 'PackageName';
-  const services = [ServiceName];
 
-  await generateProto(path, {
+  await generateProto({
+    path,
     package: packageName,
-    services,
+    services: [ServiceName],
   });
 
   const app = new Mali(path);
-  services.forEach((ServiceClass) => {
-    const serviceMethods = new ServiceClass();
-    console.log({ ...serviceMethods });
-    app.use({
-      methodName: serviceMethods.methodName,
-      methodNameWithEmptyInput: serviceMethods.methodNameWithEmptyInput,
-    }, packageName);
-  })
+  const serviceMethods = new ServiceName();
+  app.use({
+    methodName: serviceMethods.methodName,
+    methodNameWithEmptyInput: serviceMethods.methodNameWithEmptyInput,
+  }, packageName);
   app.start('127.0.0.1:50051');
 })();
 ```
-
 
 # ⚠ warning ⚠
 this package is under development, so it's not production ready. any contributions in any way is appreciated 
