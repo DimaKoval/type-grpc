@@ -11,7 +11,8 @@ OR
 yarn add type-grpc
 ```
 
-# example
+# Usage
+#### service type definitions for 
 ```typescript
 import {
   Service,
@@ -52,7 +53,37 @@ export class ServiceName {
   }
 }
 ```
+#### mali grpc server with type-grpc
+```typescript
+import Mali from 'mali';
 
-# warning
+import { generateProto } from 'type-grpc';
+import { ServiceName } from './ServiceName';
+
+(async () => {
+  const path = `${__dirname}/service.proto`;
+  const packageName = 'PackageName';
+  const services = [ServiceName];
+
+  await generateProto(path, {
+    package: packageName,
+    services,
+  });
+
+  const app = new Mali(path);
+  services.forEach((ServiceClass) => {
+    const serviceMethods = new ServiceClass();
+    console.log({ ...serviceMethods });
+    app.use({
+      methodName: serviceMethods.methodName,
+      methodNameWithEmptyInput: serviceMethods.methodNameWithEmptyInput,
+    }, packageName);
+  })
+  app.start('127.0.0.1:50051');
+})();
+```
+
+
+# ⚠ warning ⚠
 this package is under development, so it's not production ready. any contributions in any way is appreciated 
 

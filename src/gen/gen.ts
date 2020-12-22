@@ -13,25 +13,25 @@ export enum ProtoSyntax {
   proto3 = 'proto3',
 }
 export type GenerateProtoOptions = {
-  syntax?: ProtoSyntax,
-  package: string;
+  path?: string;
+  syntax?: ProtoSyntax;
+  package?: string;
+
   services: Array<GrpcServiceClass>,
 }
 
-export default async function (path: string, options: GenerateProtoOptions) {
+export default async function (options: GenerateProtoOptions) {
   let instance;
   switch(options.syntax) {
     case ProtoSyntax.proto:
-      instance = new ProtoSyntaxGenerate(path, options);
+      instance = new ProtoSyntaxGenerate(options);
       break;
     case ProtoSyntax.proto2:
-      instance = new ProtoSyntaxGenerate(path, options);
+      instance = new ProtoSyntaxGenerate(options);
       break;
     default:
-      instance = new ProtoSyntaxGenerate(path, options);
+      instance = new ProtoSyntaxGenerate(options);
   }
 
-  await instance.run();
-
-  return new Promise((resolve) => resolve());
+  return await instance.run();
 }

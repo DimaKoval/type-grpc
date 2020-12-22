@@ -1,7 +1,11 @@
 import { getMeta, getRPCMeta } from '../../meta';
 import { MessageTypeCallback } from '../../types/global';
 
-export function RPC(type: MessageTypeCallback, options: any): MethodDecorator {
+export interface RPCOptions {
+  // todo
+}
+
+export function RPC(type: MessageTypeCallback, options?: RPCOptions): MethodDecorator {
   return function (target: any, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<any>) {
     const rpc = getRPCMeta(target.constructor, propertyKey);
 
@@ -10,7 +14,6 @@ export function RPC(type: MessageTypeCallback, options: any): MethodDecorator {
       options,
     };
 
-    console.log('rpc meta', getMeta(target.constructor).rpc.methodName);
     return descriptor;
   };
 }

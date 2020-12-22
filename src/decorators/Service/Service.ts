@@ -6,7 +6,7 @@ export type GRPCServiceOptions = {
 }
 
 /**
- * TOOD
+ * TODO documentation
  * @param options
  * @constructor
  */

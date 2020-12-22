@@ -1,2 +1,3 @@
 lib
+src/__tests__/**/*.proto
 node_modules
